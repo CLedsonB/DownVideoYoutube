@@ -1,0 +1,7 @@
+ffmpeg
+
+https://github.com/BtbN/FFmpeg-Builds/releases
+
+youtube dl
+
+https://yt-dl.org/downloads/2021.06.06/youtube-dl.exe
