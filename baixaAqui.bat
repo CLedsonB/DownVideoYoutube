@@ -1,33 +1,60 @@
+color 02
 echo off
+mode con:cols=80 lines=30
+cls
+
+echo .
+echo 	----------------------------
+echo 	---CONFIGURACOES INICIAIS---
+echo 	----------------------------
+echo .
+
+echo Insira seu caminho para download
+set /p caminho=
+cd %caminho%
+
+echo Insira um link do youtube para download
+set /p link=
+
+echo Deseja baixar em formato de video ou audio?
+echo (Digite apenas 'video' ou 'audio')
+set /p resposta=
+
+if %resposta% == audio goto audio
+if %resposta% == video goto video
+
+cls
+
+echo .
+echo ----------------------------
 echo ----INICIANDO DOWNLOADS-----
+echo ----------------------------
+echo .
 
-cd $$INSIRA SEU ENDEREÇO DE DOWNLOAD$$
+:audio
+youtube-dl -x --audio-format mp3 --audio-quality 0 %link%
 
-color a
-echo ´´
-echo -----------VIDEO 1-----------------
-youtube-dl -x --audio-format mp3 --audio-quality 0 $$INSIRA O LINK DO VIDEO$$
+:video
+youtube-dl -x --audio-format mp4 --audio-quality 0 %link%
 
-color b
-echo ´´
-echo -----------VIDEO 2-----------------
-youtube-dl -x --audio-format mp3 --audio-quality 0 $$INSIRA O LINK DO VIDEO$$
+echo ----------------------------
+echo ----------CONCLUIDO---------
+echo ----------------------------
 
-color c
-echo ´´
-echo -----------VIDEO 3-----------------
-youtube-dl -x --audio-format mp3 --audio-quality 0 $$INSIRA O LINK DO VIDEO$$
 
-color d
-echo ´´
-echo -----------VIDEO 4-----------------
-youtube-dl -x --audio-format mp3 --audio-quality 0 $$INSIRA O LINK DO VIDEO$$
 
-color e
-echo ´´
-echo -----------VIDEO 5-----------------
-youtube-dl -x --audio-format mp3 --audio-quality 0 $$INSIRA O LINK DO VIDEO$$
+echo Deseja baixar outro video? (Diga apenas sim ou nao)
+set /p resposta=
 
-echo -------------CONCLUIDO--------
-PAUSE
+if %resposta% == sim goto baixar
+if %resposta% == nao goto fim
+
+:fim
+
+echo ----------------------------
+echo -------------FIM------------
+echo ----------------------------
+
+timeout 3
+exit
 
