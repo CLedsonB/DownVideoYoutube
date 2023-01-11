@@ -7,7 +7,7 @@
 - faça os downloads de acordo ao seu sistema operacional.
 
 2. Organização de arquivos
--adcione o executavel ffmep e o arquivo bat dentro da pasta **bin** que veio na instalaçao do youtube-dl
+- adcione o executavel ffmep e o arquivo bat dentro da pasta **bin** que veio na instalaçao do youtube-dl
 
 3. Por fim
 - abra o arquivo bat e resposda as opções de acordo as sugestões que aparecer
